@@ -5,25 +5,41 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.joaodanieljr.todomoviesclone.R
+import com.joaodanieljr.todomoviesclone.model.similar.SimilarResult
+import kotlinx.android.synthetic.main.similar_movie.view.*
 
-class SimilarMoviesAdapter: RecyclerView.Adapter <SimilarMoviesAdapter.SimilarviewHolder>() {
+class SimilarMoviesAdapter(
+    val listSimilarMovies:List<SimilarResult>
+): RecyclerView.Adapter <SimilarMoviesAdapter.SimilarViewHolder>() {
 
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimilarviewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimilarViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.similar_movie,parent,false)
-        return SimilarviewHolder(view)
+        return SimilarViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: SimilarviewHolder, position: Int) {
-
-    }
-
-    override fun getItemCount(): Int {
+    override fun onBindViewHolder(holder: SimilarViewHolder, position: Int) {
 
     }
 
-    class SimilarviewHolder(view:View): RecyclerView.ViewHolder(view){
+    override fun getItemCount() = listSimilarMovies.count()
 
+    class SimilarViewHolder(view:View): RecyclerView.ViewHolder(view){
+
+        val title = view.textView_title
+        val year = view.textView_year
+        val imgPoster = itemView.imageView_poster
+        val genre = view.textView_genero
+
+
+        fun bindView(holder:SimilarResult) {
+            title.text = holder.title
+            year.text = holder.release_date
+            genre.text = holder.genre_ids.toString()
+
+        }
     }
+
+
 }

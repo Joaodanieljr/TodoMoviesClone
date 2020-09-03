@@ -91,15 +91,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"
                 android:text="1500"
                 android:textColor="@android:color/white"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/view_informacoes"
+                app:layout_constraintBottom_toBottomOf="@+id/Icon_visual"
                 app:layout_constraintStart_toEndOf="@+id/Icon_visual"
-                app:layout_constraintTop_toBottomOf="@+id/textView_title"
-                app:layout_constraintVertical_bias="0.333" />
+                app:layout_constraintTop_toTopOf="@+id/Icon_visual" />
 
             <TextView
                 android:id="@+id/textView_views"
@@ -130,6 +127,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView_likesFixo"
                 app:layout_constraintStart_toEndOf="@+id/textView_likesFixo"
                 app:layout_constraintTop_toTopOf="@+id/textView_likesFixo"

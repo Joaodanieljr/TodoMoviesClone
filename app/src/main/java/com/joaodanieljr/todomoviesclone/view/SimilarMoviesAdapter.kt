@@ -7,6 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.joaodanieljr.todomoviesclone.R
+import com.joaodanieljr.todomoviesclone.functions.BuscarGenero
+import com.joaodanieljr.todomoviesclone.functions.getGenero
+import com.joaodanieljr.todomoviesclone.functions.insertImage
 import com.joaodanieljr.todomoviesclone.model.similar.SimilarResult
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.similar_movie.view.*
@@ -39,17 +42,16 @@ class SimilarMoviesAdapter(
         fun bindView(holder:SimilarResult) {
             title?.text = holder.title
             year?.text = holder.release_date.substring(0,4)
-            genre.text = holder.genre_ids.toString()
+            genre.text = getGenero(holder.genre_ids).joinToString()
+
+
 
             val img = holder.backdrop_path
             insertImage(img,imgPoster)
 
         }
 
-        private fun insertImage(url: String, imageView: ImageView) {
-            val urlPicasso = "https://image.tmdb.org/t/p/original/${url}"
-            Picasso.get().load(urlPicasso).into(imageView)
-        }
+
 
     }
 

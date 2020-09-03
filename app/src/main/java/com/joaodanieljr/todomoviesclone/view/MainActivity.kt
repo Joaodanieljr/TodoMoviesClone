@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.joaodanieljr.todomoviesclone.R
+import com.joaodanieljr.todomoviesclone.functions.insertImage
 import com.joaodanieljr.todomoviesclone.model.movie.Movie
 import com.joaodanieljr.todomoviesclone.model.similar.SimilarResult
 import com.joaodanieljr.todomoviesclone.utils.Constants
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    //Inicializando o movie Principal
+    //Inicializando o Movie Principal
     private fun initMovie(viewModel: MoviesViewModel) {
 
         viewModel.movieLiveData.observe(this, Observer {movie ->
@@ -44,11 +45,6 @@ class MainActivity : AppCompatActivity() {
         insertImage(url,imageView_principal)
 
 
-    }
-
-     private fun insertImage(url: String, imageView: ImageView) {
-         val urlPicasso = "https://image.tmdb.org/t/p/original/${url}"
-         Picasso.get().load(urlPicasso).into(imageView)
     }
 
 

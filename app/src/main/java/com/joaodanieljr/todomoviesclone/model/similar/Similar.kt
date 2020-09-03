@@ -1,5 +1,6 @@
 package com.joaodanieljr.todomoviesclone.model.similar
 
+
 data class Similar(
 
     val page: Int,

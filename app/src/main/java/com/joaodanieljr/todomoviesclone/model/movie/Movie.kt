@@ -14,7 +14,7 @@ data class Movie(
     val original_language: String,
     val original_title: String,
     val overview: String,
-    val popularity: Double,
+    val popularity: String,
     val poster_path: String,
     val production_companies: List<ProductionCompany>,
     val production_countries: List<ProductionCountry>,
@@ -27,7 +27,7 @@ data class Movie(
     val title: String,
     val video: Boolean,
     val vote_average: Double,
-    val vote_count: Int
+    val vote_count: String
 
 )
 

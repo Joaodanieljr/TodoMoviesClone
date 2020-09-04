@@ -1,25 +1,20 @@
 package com.joaodanieljr.todomoviesclone.view
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.joaodanieljr.todomoviesclone.R
+import com.joaodanieljr.todomoviesclone.R.*
+import com.joaodanieljr.todomoviesclone.functions.Favorite
 import com.joaodanieljr.todomoviesclone.functions.insertImage
-import com.joaodanieljr.todomoviesclone.model.movie.Movie
-import com.joaodanieljr.todomoviesclone.model.similar.SimilarResult
-import com.joaodanieljr.todomoviesclone.utils.Constants
-import com.squareup.picasso.Picasso
+
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(layout.activity_main)
 
         val viewModel = ViewModelProvider(this).get(MoviesViewModel::class.java)
         initMovie(viewModel)
@@ -61,4 +56,13 @@ class MainActivity : AppCompatActivity() {
         })
         viewModel.getSimilarList()
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        imageButton.setOnClickListener {
+            Favorite(it)
+        }
+    }
+
 }

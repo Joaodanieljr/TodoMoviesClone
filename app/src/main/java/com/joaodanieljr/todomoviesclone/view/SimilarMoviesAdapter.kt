@@ -44,10 +44,7 @@ class SimilarMoviesAdapter(
             year?.text = holder.release_date.substring(0,4)
             genre.text = getGenero(holder.genre_ids).joinToString()
 
-
-
-            val img = holder.backdrop_path
-            insertImage(img,imgPoster)
+            insertImage(holder.backdrop_path,imgPoster)
 
         }
 

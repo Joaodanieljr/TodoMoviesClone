@@ -42,16 +42,7 @@ class MoviesViewModel: ViewModel() {
                 override fun onResponse(call: Call<Similar>, response: Response<Similar>) {
                     if (response.isSuccessful) {
                         response.body()?.let { similar->
-                            val list: MutableList<SimilarResult> = mutableListOf()
-                            for (movie in similar.results) {
-                                val movie: SimilarResult = SimilarResult(
-                                    title = movie.title,
-                                    backdrop_path = movie.backdrop_path,
-                                    release_date = movie.release_date,
-                                    genre_ids = movie.genre_ids)
-                                list.add(movie)
-                            }
-                            similarResultLiveData.value = list
+                            similarResultLiveData.value = similar.results
                         }
                     }
                 }

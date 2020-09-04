@@ -20,6 +20,11 @@ class MainActivity : AppCompatActivity() {
         initMovie(viewModel)
         initSimilar(viewModel)
 
+        //
+        imageButton_FavoriteInterativo.setOnClickListener {
+            Favorite(it)
+        }
+
     }
 
     //Inicializando o Movie Principal
@@ -55,14 +60,11 @@ class MainActivity : AppCompatActivity() {
             }
         })
         viewModel.getSimilarList()
+
+
+
     }
 
-    override fun onResume() {
-        super.onResume()
 
-        imageButton.setOnClickListener {
-            Favorite(it)
-        }
-    }
 
 }

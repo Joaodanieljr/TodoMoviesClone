@@ -7,10 +7,9 @@ Ao abrir o aplicativo, verá os detalhes do filme escolhido na tela inicial da a
 O aplicativo possui um botão de like.
 
 ## Algumas screenshots
-![light](https://github.com/joaodanieljr/)
-![dark](https://github.com/)
-![collapsed](https://github.com/)
-![loading](https://github.com/)
+![principal](https://github.com/Joaodanieljr/TodoMoviesClone/blob/master/Images/1.png)
+![similares](https://github.com/Joaodanieljr/TodoMoviesClone/blob/master/Images/2.png)
+![like](https://github.com/Joaodanieljr/TodoMoviesClone/blob/master/Images/3.png)
 
 ## Ambiente de instalação
 * 1: Instale o Android Studio;
